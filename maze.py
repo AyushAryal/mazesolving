@@ -10,6 +10,16 @@ def createboard():
         ["+","+","+","+","E"]
         ])
 
+def dimension(maze):
+    x=0
+    y=0
+    for row in maze:
+        x+=1
+        y=0
+        for col in row:
+            y+=1
+    return(x,y)
+
 def drawsqaure(pen,x,y,color):
     pen.pensize(1)
     pen.color("black",color)
@@ -22,17 +32,17 @@ def drawsqaure(pen,x,y,color):
         pen.left(90)
     pen.end_fill()
 
-def printboard(maze,pen):
+def printboard(maze,pen,length,bredth):
     x=20
     y=20
     pen.color("red")
     pen.setposition(x,y)
     for row in maze:
-        y=(y-20)%(-120)
+        y=(y-20)%(-20*(bredth+1))
         x=0
         line=""
         for col in row:
-            x=(x+20)%120
+            x=(x+20)%(20*(length+1))
             if col=="-":
                 color="black"
                 drawsqaure(pen,x,y,color)
@@ -71,7 +81,8 @@ pen.pensize(1)
 pen.speed(0)
 
 maze=createboard()
-printboard(maze,pen)
+length,bredth=dimension(maze)
+printboard(maze,pen,length,bredth)
 print(determinestartpoint(maze))
 
 pen.getscreen()._root.mainloop() 
