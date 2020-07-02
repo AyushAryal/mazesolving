@@ -1,14 +1,6 @@
 import turtle
+import turt
 
-def createboard():
-    return([
-        ["-","-","S","-","+"],
-        ["+","+","+","+","+"],
-        ["-","-","-","+","+"],
-        ["+","-","+","+","-"],
-        ["+","-","+","-","+"],
-        ["+","+","+","+","E"]
-        ])
 
 def dimension(maze):
     x=0
@@ -80,7 +72,7 @@ pen.hideturtle()
 pen.pensize(1)
 pen.speed(0)
 
-maze=createboard()
+maze=turt.createboard()
 length,bredth=dimension(maze)
 printboard(maze,pen,length,bredth)
 print(determinestartpoint(maze))
