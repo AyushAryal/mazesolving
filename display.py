@@ -1,5 +1,5 @@
 import turtle
-import turt
+import problem
 
 
 def dimension(maze):
@@ -32,7 +32,6 @@ def printboard(maze,pen,length,bredth):
     for row in maze:
         y=(y-20)%(-20*(bredth+1))
         x=0
-        line=""
         for col in row:
             x=(x+20)%(20*(length+1))
             if col=="-":
@@ -48,12 +47,6 @@ def printboard(maze,pen,length,bredth):
                 color="green"
                 drawsqaure(pen,x,y,color)
                 
-            
-
-            line=line+col+"  "
-        
-        print("\n")
-
 def determinestartpoint(maze):
     x=1
     for row in maze:
@@ -72,9 +65,9 @@ pen.hideturtle()
 pen.pensize(1)
 pen.speed(0)
 
-maze=turt.createboard()
+maze=problem.createboard()
 length,bredth=dimension(maze)
 printboard(maze,pen,length,bredth)
-print(determinestartpoint(maze))
+pos=determinestartpoint(maze)
 
 pen.getscreen()._root.mainloop() 
