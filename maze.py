@@ -17,14 +17,9 @@ def drawsqaure(pen,x,y,color):
     pen.begin_fill()
     pen.setposition(x+1,y+1)
     pen.pendown()
-    pen.forward(20)
-    pen.left(90)
-    pen.forward(20)
-    pen.left(90)
-    pen.forward(20)
-    pen.left(90)
-    pen.forward(20)
-    pen.left(90)
+    for times in range(4):
+        pen.forward(20)
+        pen.left(90)
     pen.end_fill()
 
 def printboard(maze,pen):
@@ -72,7 +67,6 @@ def determinestartpoint(maze):
 pen=turtle.Turtle()
 turtle.bgcolor("#f28343")
 pen.hideturtle()
-pen.shape("square")
 pen.pensize(1)
 pen.speed(0)
 
