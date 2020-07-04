@@ -1,5 +1,5 @@
 import turtle
-import problem
+from problem import board, start_pos,end_pos
 
 
 def dimension(maze):
@@ -47,17 +47,8 @@ def printboard(maze,pen,length,bredth):
                 color="green"
                 drawsqaure(pen,x,y,color)
                 
-def determinestartpoint(maze):
-    x=1
-    for row in maze:
-        y=1
-        for col in row:
-            if (col=="S"):
-                pos=[x,y]
-                return(pos)
-            else:
-                y+=1
-        x+=1
+
+
 
 pen=turtle.Turtle()
 turtle.bgcolor("#f28343")
@@ -65,9 +56,8 @@ pen.hideturtle()
 pen.pensize(1)
 pen.speed(0)
 
-maze=problem.createboard()
+maze=board
 length,bredth=dimension(maze)
 printboard(maze,pen,length,bredth)
-pos=determinestartpoint(maze)
 
 pen.getscreen()._root.mainloop() 
