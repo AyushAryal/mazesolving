@@ -1,4 +1,4 @@
-# Maze Solving Using Python and BFS algoritn
+# Maze Solving Using Python and BFS algorithm
 
 Maze Solving program written in python based on BFS algorithm.<br>
 
